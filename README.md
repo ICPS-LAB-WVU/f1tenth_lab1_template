@@ -12,7 +12,7 @@ It's highly recommended to install Ubuntu natively on your machine for developem
 
 ## 1. Overview
 
-The goal of this lab is to get you familiar with the ROS 2 workflow. You'll have the option to complete the coding segment of this assignment in either Python or C++. However, we highly recommend trying out both since this will be the easiest assignment to get started on a new language, and the workflow in these two languages are slightly different in ROS2 and it's beneficial to understand both.
+The goal of this lab is to get you familiar with the ROS 2 workflow. You'll have to complete the coding segment of this assignment in Python. 
 
 In this lab, it'll be helpful to read these tutorials if you're stuck:
 
@@ -50,22 +50,22 @@ If you need multiple terminals and you're inside a Docker container, use `tmux`.
 
 ## 4: Creating a Package
 **Deliverable 1**: create a package named `lab1_pkg` in the workspace we created. The package needs to meet these criteria:
-- The package supports both `Python` and `C++`.
+- The package supports`Python`.
 - The package needs to have the `ackermann_msgs` dependency.
-- Both of these can be done by declaring the correct dependencies in `package.xml`.
+- The package can be done by declaring the correct dependencies in `package.xml`.
 - If declared properly the depencies could be installed using `rosdep`.
 - Your package folder should be neat. You shouldn't have multiple 'src' folders or unnecessary 'install' or 'build' folders.
 
 ## 5: Creating nodes with publishers and subscribers
-**Deliverable 2**: create two nodes in the package we just created. You can use either `Python` or `C++` for these nodes.
+**Deliverable 2**: create two nodes in the package we just created. You have to use `Python` for these nodes.
 
-The first node will be named `talker.cpp` or `talker.py` and needs to meet these criteria:
+The first node will be named `talker.py` and needs to meet these criteria:
 - `talker` listens to two ROS parameters `v` and `d`.
 - `talker` publishes an `AckermannDriveStamped` message with the `speed` field equal to the `v` parameter and `steering_angle` field equal to the `d` parameter, and to a topic named `drive`.
 - `talker` publishes as fast as possible.
 - To test node, set the two ROS parameters through command line, a launch file, or a yaml file.
 
-The second node will be named `relay.cpp` or `relay.py` and needs to meet these criteria:
+The second node will be named `relay.py` and needs to meet these criteria:
 - `relay` subscribes to the `drive` topic.
 - In the subscriber callback, take the speed and steering angle from the incoming message, multiply both by 3, and publish the new values via another `AckermannDriveStamped` message to a topic named `drive_relay`.
 
@@ -86,8 +86,6 @@ ros2 node info relay
 
 ## 8: Deliverables and Submission
 In addition to the three deliverables described in this document, fill in the answers to the questions listed in **`SUBMISSION.md`**.
-
-We'll be using Github classroom throughout the semester to manage submissions for lab assignments. After you're finished, directly commit and push to the repo Github classroom created for you.
 
 ## 9: Grading Rubric
 - Correctly creating the package: **25** Points
